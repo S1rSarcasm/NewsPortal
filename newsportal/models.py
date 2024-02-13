@@ -65,10 +65,10 @@ class Comment(models.Model):
     time_in = models.DateTimeField(auto_now_add=True)
     comment_rating = models.FloatField(default=0.0)
 
-    def like(self):
+    def comment_like(self):
         self.post.comment_rating += 1
         self.post.save()
 
-    def dislike(self):
+    def comment_dislike(self):
         self.post.comment_rating -= 1
         self.post.save()
